@@ -1,0 +1,4 @@
+
+type HomeProps = {
+    title: string
+}
