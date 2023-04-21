@@ -1,7 +1,6 @@
 import React from "react";
 import ThemeProvider from "react-bootstrap/ThemeProvider";
 import { breakpoints } from "./config/theme";
-import "./App.css";
 import AppRouter from "./Router";
 import { BrowserRouter } from "react-router-dom";
 

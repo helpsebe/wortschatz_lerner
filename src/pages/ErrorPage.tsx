@@ -1,6 +1,6 @@
 import React from "react";
 
-const ErrorPage = (props: any) => {
+const ErrorPage = () => {
   return <>Page Not Found</>;
 };
 
