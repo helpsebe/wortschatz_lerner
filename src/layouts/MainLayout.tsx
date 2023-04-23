@@ -5,8 +5,8 @@ import Header from "../components/Header";
 export const MainLayout = () => {
   return (
     <>
-      <Header />
-      <Container>
+      <Container fluid="sm">
+        <Header />
         <Outlet />
       </Container>
     </>
