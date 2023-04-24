@@ -1,7 +1,6 @@
-import { Container } from "react-bootstrap";
 import HeaderTrainer from "../components/HeaderTrainer";
 
-const Home = () => {
+const VocabularyTrainer = () => {
   return (
     <>
       <HeaderTrainer />
@@ -9,4 +8,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default VocabularyTrainer;
