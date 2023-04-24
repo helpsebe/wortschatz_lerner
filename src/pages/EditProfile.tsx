@@ -1,7 +1,7 @@
 import React from "react";
 
-const EditPofile = () => {
+const EditProfile = () => {
   return <>Edit Profile</>;
 };
 
-export default EditPofile;
+export default EditProfile;
