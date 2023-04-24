@@ -1,7 +1,12 @@
-import React from "react";
+import { Container } from "react-bootstrap";
+import HeaderTrainer from "../components/HeaderTrainer";
 
 const Home = () => {
-  return <>Home Page</>;
+  return (
+    <>
+      <HeaderTrainer />
+    </>
+  );
 };
 
 export default Home;
