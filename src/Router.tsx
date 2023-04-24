@@ -1,18 +1,30 @@
-import { Suspense } from "react";
+import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import { MainLayout } from "./layouts";
-import Home from "./pages/Home";
-import EditPofile from "./pages/EditProfile";
-import ErrorPage from "./pages/ErrorPage";
+import { FullscreenLoader } from "./components/Loader/FullscreenLoader";
+const MainLayout = lazy(() => import("./layouts/MainLayout"));
+
+export const routes = [
+  {
+    path: "/",
+    element: lazy(() => import("./pages/VocabularyTrainer")),
+    index: true,
+  },
+  { path: "/profile", element: lazy(() => import("./pages/EditProfile")) },
+  { path: "*", element: lazy(() => import("./pages/ErrorPage")) },
+];
 
 const AppRouter = () => {
   return (
-    <Suspense fallback={<>Loading...</>}>
+    <Suspense fallback={<FullscreenLoader />}>
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route index path="/" element={<Home />}></Route>
-          <Route path="*" element={<ErrorPage />}></Route>
-          <Route path="/profile/edit" element={<EditPofile />}></Route>
+          {routes.map((route, idx) => (
+            <Route
+              key={idx}
+              path={route.path}
+              index={route.index ? true : undefined}
+              element={<route.element />}></Route>
+          ))}
         </Route>
       </Routes>
     </Suspense>
